@@ -30,3 +30,14 @@ function createCommentCard(author, text) {
 
   return card;
 }
+
+function showError(message) {
+  errorMessage.textContent = message;
+  errorMessage.hidden = false;
+}
+
+function hideError() {
+  errorMessage.textContent = "";
+  errorMessage.hidden = true;
+}
+
