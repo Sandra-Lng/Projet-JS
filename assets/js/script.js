@@ -41,3 +41,36 @@ function hideError() {
   errorMessage.hidden = true;
 }
 
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const nameValue = nameInput.value.trim();
+  const commentValue = commentInput.value.trim();
+
+  if (nameValue.length < 2) {
+    showError("Le nom doit contenir au moins 2 caractères.");
+    return;
+  }
+
+  if (commentValue.length < 10) {
+    showError("Le commentaire doit contenir au moins 10 caractères.");
+    return;
+  }
+
+  hideError();
+
+  const newComment = createCommentCard(nameValue, commentValue);
+  commentsList.prepend(newComment);
+
+  form.reset();
+});
+
+const initialComments = [
+  { author: "Téo", text: "Superbe recette !" },
+  { author: "Léa", text: "Test de commentaire" }
+];
+
+initialComments.forEach(function (comment) {
+  const card = createCommentCard(comment.author, comment.text);
+  commentsList.appendChild(card);
+});
