@@ -180,3 +180,31 @@ h1, h2, h3, .btn-publish {
 .comment-card .comment-text {
   margin-bottom: 8px;
 }
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #fee2e2;
+}
+
+.site-footer {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  padding: 16px 0;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
